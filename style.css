@@ -1,0 +1,1328 @@
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.header{
+    padding: 0;
+    margin: 0;
+}
+.header .navbar h1{
+    color: blue;
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: hsl(240, 3%, 6%);
+    padding: 9px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+nav ul{
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    margin-right: -120px;
+}
+nav li {
+    margin-right: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 11px;
+    margin: 0 15px;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+}
+nav a:hover {
+    color: blue;
+    
+}
+.navbar a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    /* set thicknes of the line */
+    height: 2px;
+    background-color: rgb(54, 15, 230);
+    /* add a transition effect */
+    transition: width 0.3s;
+    transition: width 0.3s;
+    
+}
+.navbar a:hover:after {
+    width: 100%;
+}
+/* homepage */
+section {
+    padding: 20px;
+    position: relative;
+  }
+.registration-options.active {
+    display: block;
+    background-color: white;
+  }
+
+  .registration-options {
+    position: absolute;
+    z-index: 9999;
+    background-color: #e2dff0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    display: none;
+  }
+  .registration-options P{
+    color: blue;
+    font-size: 17px;
+    margin-top: -5px;
+    padding: 2px;
+  }
+  
+  .registration-options button {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    padding: 3px;
+    width: 80px;
+    border-radius: 5px;
+    border: 1px solid blue;
+  }
+  .registration-options .close-registration-options{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+/*login*/
+.login-popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+}
+.login-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 281px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   /* to ensure it is on top of other content */
+   z-index: 9999;
+}
+.login-container h1{
+    text-align: center;
+    color: #0056b3;
+}
+.loginform-t{
+    display: flex;
+    flex-direction: column;
+}
+.loginform-t label {
+    color: #007BFF;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.loginform-t input{
+    width: 200px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+.login-container button[type="submit"]{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
+
+.login-container .close-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+/*Registration*/
+/* customer form */
+.customer-reg-container {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* add a blur effect */
+    backdrop-filter: blur(0px);
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+    
+}
+.customer-form {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 360px;
+    height: 497px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    display: none;
+
+    
+}
+.customer-form h1{
+    color: #3b20d3;
+    font-size: 23px;
+}
+.customer-form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+#customer-form label{
+    color: hsl(226, 77%, 36%);
+    font-size: 15px;
+    /* padding: 3px; */
+}
+#customer-form input[type="text"]
+{
+    width: 60%; 
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#customer-form input[type="password"] {
+    width: 60%; 
+    padding: 3px;
+    margin-top: 3px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* style for customer register button */
+#customer-form button[type="submit"]{
+    width: 30%;
+    padding: 8px 15px;
+    background-color: #3b20d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* close customer registration form */
+.customer-form .close-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+/* end of customer registration form */
+ 
+
+/* Staff Registration Form */
+
+.staff-reg-container{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* add a blur effect */
+    backdrop-filter: blur(0px);
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+    
+}
+.staff-form{
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    height: 495px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+
+.staff-form h1{
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #25238df8;
+}
+.staff_form_reg{
+    display: flex;
+    justify-content: center;
+}
+.staff_form_reg label{
+    color: rgb(55, 146, 207);
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    padding: 2px;
+    font-weight: bold;
+}
+.staff-form select{
+    padding: 3px;
+    margin-top:-10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: blue;
+}
+.staff_form_reg input[type="text"], input[type="password"], input[type="date"]{
+    padding: 3px;
+    margin-top:-10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form_1{
+    margin: 8px;
+    padding: 15px;
+}
+.staff-form button[type="submit"]{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    margin-left: 170px;
+    margin-top: -50px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ /* Style for the close button */
+ .staff-form .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+
+/* forgot password style */
+
+.forgotpasswordpage{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* add a blur effect */
+    backdrop-filter: blur(0px);
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+    display: none;
+    position: fixed;
+
+}
+.forgotpassword{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    /* display: none; */
+}
+.forgotForm label{
+    color: rgb(55, 146, 207);
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    padding: 2px;
+    font-weight: bold;
+}
+#role{
+    padding: 3px;
+    margin-top:-10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.forgotForm input[type="text"], input[type="password"]{
+    padding: 3px;
+    margin-top:-5px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.forgotForm [type="submit"]{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    top: 85%;
+    left: 5%;
+    position: absolute;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* main section */
+.m-section{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    
+}
+.f-section{
+    width: 50%;
+
+}
+.f-section h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0056b3;
+    font-size: 21px;
+    font-weight: bold;
+    position: relative;
+    animation: moveText 5s infinite;
+    margin-top: 50px;
+    margin-left: 16px;
+}
+@keyframes moveText {
+    1%{ left: 0; color: #0056b3; font: 23px;}
+    40%{ left: 40%; color: red; font-size: 25px;}
+    100%{ left: 0; color: black; font: 19px;}
+}
+.f-section p{
+    margin-top: 31px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
+.f-section ul li{
+    list-style: none;
+    padding: 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.f-section ul li a{
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+    padding: 5px;
+}
+.l-section{
+    width: 50%;
+    /* background-color: #0056b3; */
+}
+.l-section P{
+    text-align: center;
+    font-size: 21px;
+    color: #0056b3;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+.l-section .change-images{
+    position: relative;
+    /* background-color: aqua; */
+    width: 92%;
+    margin: 20px 25px;
+    height: 80%;
+    overflow: hidden;
+
+}
+#changing-image{
+    width: 95%;
+    height: 90%;
+    margin: 13px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+#text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: rgb(46, 111, 197);
+    font-size: 24px;
+    font-weight: bold;
+    animation: slideLeft 5s linear forwards;
+    
+}
+@keyframes slideLeft {
+    form {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* footer */
+footer{
+    background-color: hwb(0 1% 99%);
+    color: #ffffff;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 0 27px ;
+    margin-bottom: -30px;
+    
+}
+footer .footer-f{
+    display: flex;
+    justify-content: space-between;
+}
+footer h1{
+
+    font-size: 23px;
+    padding: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+.contact-us p{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+.contact-us ul li{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    padding: 8px;
+    list-style: none;
+}
+.our-services p{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+.our-services ul li{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    padding: 8px;
+    list-style: none;
+}
+.our-services ul li a{
+    cursor: pointer;
+    color:#ffffff;
+}
+.about-us{
+    width: 25%;
+}
+.about-us p{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+    
+}
+footer .footer-m{
+    padding-bottom: 7%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-m .news-updates p{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+}
+.footer-m .news-updates label{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+}
+.footer-m input[type="text"]{
+    width: 200px;
+    padding: 7px;
+    margin-bottom: 2px !important;
+    border: 3px solid hsl(249, 56%, 93%);
+    border-radius: 7px;
+}
+.footer-m button[type="updates"]{
+    width: 100px;
+    padding: 5px;
+    /* margin-bottom: 2px !important; */
+    background-color: #007BFF;
+    border: 1px solid hsl(249, 56%, 41%);
+    border-radius: 7px;
+    cursor: pointer;
+    position: absolute;
+    left: 30px;
+    margin-top: 58px;
+}
+.other {
+    margin-right: 60%;
+}
+
+hr{
+    width: 95%;
+
+}
+.footer-l{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 20%;
+    padding-bottom: 5%;
+}
+.footer-l .company-name p{
+    color: #0056b3;
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 350;
+}
+.footer-l .copy p{
+    color: blue;
+}
+
+.error{
+    color: red;
+}
+
+
+
+/* customer booking page */
+/* style for main dashboard  */
+
+.dashboard_container{
+    background-color: #108898;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    /* position: fixed; */
+}
+/* style for company logo */
+.dashboard_container .company-logo {
+    position: absolute;
+}
+.dashboard_container .company-logo .logo_logo1 {
+    color: crimson;
+    font-size: 20px;
+}
+.dashboard_container .company-logo .logo_logo2 {
+    color: rgb(44, 39, 39);
+    font-size: 25px;
+}
+.dashboard_container .company-logo .logo_logo3 {
+    color: rgb(101, 203, 22);
+    font-size: 25px;
+}
+.dashboard_container .company-logo .logo_text{
+    margin-top: -55px;
+    margin-left: 100px;
+}
+.dashboard_container .company-logo .logo_text1{
+    font-size: 35px;
+    color: rgb(53, 47, 47);
+}
+.dashboard_container .company-logo .logo_text2{
+    font-size: 20px;
+    color: #1633c2;
+}
+.dashboard_container .company-logo .logo_text3{
+    color: hsl(291, 84%, 51%);
+    font-size: 35px;
+}
+.dashboard_container .company-logo .logo_text4{
+    color: rgb(50, 46, 44);
+    font-size: 25px;
+}
+.dashboard_container .company-logo .logo_text5{
+    color: rgb(217, 14, 14);
+    font-size: 35px;
+}
+.dashboard_container .company-logo .logo_text6{
+    color: rgb(70, 17, 131);
+    font-size: 20px;
+}
+
+
+/* style for user profile */
+
+
+
+
+.dashboard_container  .welcome_user{
+    position: absolute;
+    right: 0;
+    margin-right: 70px;
+    margin-top: 20px;
+    color: white;
+    text-decoration: underline;
+}
+#customer_ID{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 130px;
+    top: -0px;
+    /* display: none; */
+}
+
+.customer-links nav-link{
+    margin-top: -25px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+}
+.customer-links li{
+    list-style: none;
+    padding:30px ;
+}
+.customer-links li a{
+    text-decoration: none;
+    color: white;
+}
+.customer-links li :hover{
+    background-color: blue;
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.dashboard_content{
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.dashboard_content p{
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(82, 75, 75);
+}
+.dashboard_content ul{
+    display: flex;
+    justify-content: center;
+}
+.dashboard_content ul li{
+    list-style: none;
+    padding: 15px;
+    margin-left: -20px;
+    color: blue;
+    text-decoration: underline;
+}
+.dashboard_content ul li a{
+    text-decoration: none;
+    color: blue;
+
+}
+/* dashboar content */
+.content_Container {
+    display: flex;
+}
+.content-of-dashboard{
+    width: 45%;
+    height: auto;
+    margin: 50px;
+    /* background-color: #26de19; */
+    
+}
+.content-of-dashboard h1{
+    font-size: 17px;
+    color: hsl(302, 76%, 47%);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+.content-of-dashboard p{
+    font-size: 14px;
+    font-weight: 200;  
+    margin-top: -1px; 
+    text-align: left;
+    margin-left: 50px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    padding: 10px;
+    line-height: 30px;
+    margin-bottom: -20px;
+}
+.content-of-dashboard .content-of-dashboard_links a{
+    display: flex;
+    margin-left: 40px;
+    padding: 20px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    cursor: pointer;
+    color: blue;
+}
+.content-of-dashboard .content-of-dashboard_links p{
+    color: black;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 50px;
+}
+/* transport services portfolion style */
+.content-of-dashboard .Transport_service_portfolio h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-decoration: underline;
+}
+
+.content-of-dashboard .Transport_service_portfolio .image_text{
+    position: absolute;
+    margin-left: 230px;
+    font-size: 18px;
+    font-weight: bold;
+    color: hsl(235, 89%, 39%);
+}
+.content-of-dashboard .Transport_service_portfolio .image-portfolio{
+    width: 80%;
+    height: 300px;
+    margin-bottom: 30px;
+    margin-left: 60px;
+    margin-top: 50px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.content-of-dashboard .Transport_service_portfolio .image-portfolio .image {
+    position: absolute;
+    right: -100%;
+    transition: right 1s ease;
+    width: 400px;
+    height: 350px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+
+/* style for booking */
+.booking-form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 20px;
+}
+/* style for goods information display */
+#booking-formGoodsInformation{
+    background-color: rgba(240, 240, 240, 0.9);
+    backdrop-filter: blur(8px);
+    height: 500px;
+    top: 20%;
+    display: none;
+    position: fixed;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 87%;
+    right: -100%;
+    z-index: 999;
+    transition: right 0.5s ease-in-out;
+}
+#back-to-dashboard{
+    position: absolute;
+    cursor: pointer;
+    background-color:black;
+    color: white;
+    margin-left: 12%;
+    margin-top: 3%;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50px;
+    padding: 4px; 
+}
+/* end */
+.customer-information-feilds {
+    display: flex;
+    flex-direction: row;
+}
+.custom-information-form #buttonContinue_booking {
+    background-color: #0f1de3;
+    color: white;
+    /* position: absolute; */
+    margin-left: 57%;
+    margin-top: -30px;
+    width: 70px;
+    padding: 4px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.customer-feild-information {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 8px;
+}
+#description{
+    width: 220px;
+
+}
+#goods-information {
+    margin-left: 130px;
+}
+#goods-information select {
+    width: 90%;
+    padding: 3px;
+    margin-left: 20px;
+    margin-bottom: 9px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#goods-information input{
+    width: 90%;
+}
+.goods_information {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 30%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+#delivery-date {
+    margin-top: 7px;
+}
+.customer-feild-information h1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+    
+}
+.customer-feild-information label {
+    margin-left: 19px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.customer-feild-information input{
+    width: 90%;
+    padding: 3px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+    /* margin-bottom: 8px; */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+.customer-information-feilds textarea{
+    width: 60%;
+    padding: 3px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+    /* margin-bottom: 8px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* buttonContinue_booking */
+
+/* vehicle on book transport */
+.vehicle-booking-information_container{
+    position: absolute;
+    display: none;
+    z-index: 1000;
+    background-color: rgba(240, 240, 240, 0.9);
+    backdrop-filter: blur(8px);
+    top: 15%;
+    margin-left: 100px;
+    margin-right: 100px;
+    /* position: fixed; */
+}
+/* style to return back */
+.vehicle-booking-information_container #returnback_booking{
+    background-color: #18181a;
+    color: white;
+    /* margin-left: 100px; */
+    margin-top: 15px;
+    width: 50px;
+    padding: 4px;
+    border: 1px solid rgb(154, 154, 158);
+    border-radius: 3px;
+    cursor: pointer;
+     
+}
+.vehicle-booking-information {
+    margin: 11px;
+    height: 100px;
+    margin-bottom: 5%;
+   
+}
+.vehicle-booking-information h1{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: left;
+}
+.vehicle-booking-information p{
+    font-size: 15px;
+    font-weight: 600;
+    /* padding:3px 5px ; */
+    color: #00b345;
+}
+.vehicle-booking-information ul {
+    display: flex;
+    flex-direction: row;
+}
+.vehicle-booking-information p{
+    margin-top: -5px;
+}
+.vehicle-booking-information ul li {
+    list-style: none;
+}
+.vehicle-booking-information ul li a {
+    padding: 11px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.custom-information-form button {
+    margin-bottom: 100px;
+    
+}
+
+
+.vehicleAvailable-list tr, th {
+    font-size: 11px;
+}
+.Vahicle-list-Table {
+    /* background-color: white; */
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.Vahicle-list-Table tr td{
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+    padding: 5px;
+    width: 5%;
+}
+tr .bookBtn{
+    background-color: #26de19;
+    color: white;
+    padding: 1px 7px;
+    width: 70px;
+    border: 1px solid rgb(0, 255, 21);
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -15px;
+
+
+}
+.transaction-details h1{
+    color: #5244ae;
+    font-size: 20px;
+    text-decoration: underline;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.transaction-details-show {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px); /* Add a blur effect */
+    background-color: rgba(32, 30, 30, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's on top of other content */
+}
+.transaction-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 60%;
+    padding: 20px;
+    border: 2px solid rgb(242, 238, 238);
+    border-radius: 5px;
+    z-index: 1000;
+    background-color: white;
+}
+.transaction-details button[type='submit']{
+    background-color: #11e331;
+    color: #fff;
+    border: none;
+    padding: 6px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 70px;
+    position: absolute;
+    left: 35%;
+    top: 90%;
+}
+.transaction-details button[type='cancle']{
+    background-color:rgb(101, 94, 94)e;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    left: 60%;
+    top: 90%;
+}
+ /* Style for the close button */
+.transaction-details .close-button {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+}
+#transactionDetails {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color: #000;
+}
+.transactionDetails-text {
+    color: #5244ae;
+    font-size: 15px;
+    margin-left: 11px;
+    text-decoration: underline;
+
+}
+#vehicle-type, #vehicle-plate, #vehicle-capacity, #vehicle-status {
+     color: rgb(73, 74, 71); 
+    font-size: 14px;
+}
+.error-message{
+    color: red;
+}
+
+.goodsinformation{
+    position: absolute;
+    top: 1%;
+    margin-left: 42%;
+    margin-top: 57px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.goodsinformation #goods-text-information{
+    color: #5244ae;
+    font-size: 15px;
+    /* margin-left: 11px; */
+    text-decoration: underline;
+}
+.goodsinformation p{
+    color: rgb(73, 74, 71); 
+    font-size: 14px;
+}
+#test{
+    background-color: #dddddd;
+}
+/* payment method and procedure */
+.payment_service {
+    display: none;
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 465px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    backdrop-filter: blur(0px);
+    background-color: rgba(218, 212, 212, 0.5); 
+    z-index: 9998; 
+}
+.payment-details{
+    /* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 330px;
+    height: 370px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    z-index: 1000;
+    background-color: white;
+    
+}
+.payment_service.active {
+    display: block;
+    animation: slideUp 0.5s ease forwards;
+}
+@keyframes slideUp {
+    from{
+        bottom: -50px;
+    }
+    to {
+        bottom: calc(20% - 100px); /* center verticaly */
+    }
+}
+.payment-details h2{
+    text-align: center;
+    color: #181918;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100;
+    font-size: 15px;
+}
+.payment-details p {
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.payment-details #close-payment{
+    background-color: #3b20d3;
+    color: white;
+    border: 1px solid #3b20d3;
+    border-radius: 4px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    padding: 5px 6px;
+    width: 80px;
+    cursor: pointer;
+
+}
+.payment-details .servcies1{
+    margin: 10px;
+    color: #111211;
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 14px;
+}
+.payment-details .servcies2{
+    margin: 10px;
+    color: #131413;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.payment-details .servcies3{
+    margin: 10px;
+    color: #161716;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.payment-details .servcies4{
+    margin: 10px;
+    color: #00b345;
+    font-weight: bolder;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+
+
+
+
+#vehcile_display {
+    color: rgb(27, 99, 141);
+    font-size: 13px;
+    margin-bottom: -10px;
+    text-decoration: underline;
+}
+
+
+/* style for ending customer dashboar */
+.customer-dashboar-footer{
+    margin-top: 20px;
+    margin-left: 50px ;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #114275;
+    border-radius: 5px;
+    height: 450px;
+    background-color: #114275;
+}
+.customer-dashboar-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.customer-dashboar-footer .footer-content{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.customer-dashboar-footer .footer-content #footer-pp{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 300px;
+    margin-left: -25px;
+}
+.customer-dashboar-footer .footer-content #footer-p{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.customer-dashboar-footer .footer-content li{
+    list-style: none;
+}
+.customer-dashboar-footer .footer-content li a{
+    text-decoration: none;
+    color: #ab872d;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2px;
+}
+ 
+ 
+.customer-dashboar-footer .company-name p{
+    margin-top: 80px;
+    position: absolute;
+    right: 40%;
+    font-weight: 200;
+
+}
+.customer-dashboar-footer .copy p{
+    position: absolute;
+    right: 37%;
+    margin-top: 130px;
+    font-weight: 100;
+    font-size: 14px;
+}

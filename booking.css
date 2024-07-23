@@ -1,0 +1,296 @@
+.vehicle_available_div{
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+    height: 600px;
+    width: 85%;
+    margin-left: 100px;
+    position: absolute;
+    z-index: 1000; 
+    display: none;
+}
+#Available_vehicle_list{
+    height: auto;
+}
+.vehicle_available_div h1{
+    text-align: center;
+    color: green;
+    font-size: 17px;
+}
+#Available_vehicle_list {
+    margin-left: 300px;
+}
+#Available_vehicle_list tr, th {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+#Available_vehicle_list tr td{
+    font-size: 13px;
+    padding:10px 15px;
+}
+.book_Button{
+    background-color: green;
+    color: white;
+    width: 80px;
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+/* Customer profile */
+/* style for user profile */
+.dashboard_container .user-profile{
+    position: absolute;
+    right: 0;
+}
+.dashboard_container .user-profile a{
+    text-decoration: none;
+    float: right;
+    padding: 10px;
+    color: white;
+    margin-right: 20px;
+}
+
+.dashboard_container .user-profile :hover{
+    background-color: blue;
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.user_profile_container{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* add a blur effect */
+    backdrop-filter: blur(1px);
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+}
+.user_profile_page {
+    /* display: none; */
+    position: absolute;
+    width: 350px;
+    height: 550px;
+    background-color: white;
+    top: 19%;
+    margin-left: 35px;
+    border: 1px solid rgb(136, 132, 132);
+    border-radius: 5px;
+    position: fixed;
+}
+.user_profile_page h1{
+    color: green;
+    margin-left: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+.user_profile_page p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    margin-left: 10px;
+    color: black;
+}
+
+.user_profile_page h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    font-weight: 200;
+    color: green;
+}
+.user_profile_page .user_transport_history {
+    color: blue;
+    cursor: pointer;
+    font-size: 15px;
+}
+.close_userprofile_button {
+    position: absolute;
+    margin-left: 92%;
+    margin-top: -250px;
+    cursor: pointer;
+
+}
+/* pending Transport */
+.pendingTransport{
+    display: none;
+    left: 102%;
+    top: 1%;
+    width: 312%;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.pendingTransport p{
+    text-align: center;
+    color: green;
+    font-size: 17px;
+    
+}
+.pending_Transport{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: 15px;
+    position: absolute;
+    padding: 5px;
+}
+.pending_Transport_DIV thead th{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.pending_Transport_DIV tbody tr td {
+     border-bottom: 1px solid #ddd;
+     font-size: 12px;
+}
+/* end */
+
+/* transportHistory */
+.transportHistory{
+    left: 102%;
+    top: 1%;
+    width: 312%;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: none;
+}
+.transportHistory p{
+    text-align: center;
+    color: green;
+    font-size: 17px;
+    
+}
+.complete_Transport{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: 15px;
+    position: absolute;
+    padding: 5px;
+    top: 57%;
+}
+.customerTransportHistory thead th{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.customerTransportHistory tbody tr td {
+     border-bottom: 1px solid #ddd;
+     font-size: 12px;
+}
+/* end */
+.customer_booking_success_page{
+    top: 12%;
+    right: 2%;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    width: 95%;
+    height: 80%;
+    border: 1px solid rgb(238, 232, 232);
+    border-radius: 4px;
+    position: fixed;
+    display: none;
+}
+.customer_services_page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 450px;
+    transform: translate(-50%, -50%);
+    /* transform: translate() is used to horizontatlly and vertically center an element whitin its parent container */
+    background-color: #fff;
+    padding: 20px;
+    position: 2px solid hwb(0 100% 0%);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+#back_to_Home{
+    background-color: hsl(113, 84%, 44%);
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 5px;
+    border: 1px solid #16d029;
+    border-radius: 5px;
+}
+.customer_services_page h1{
+    color: green;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+.customer_services_page .service_p{
+    text-align: center;
+    color: blue;
+    font: 15px;
+    padding: 15px;
+}
+.customer_services_page .services_message{
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 5px;
+}
+#services_message {
+    color: green;
+    font-size: 17px;
+}
+#back_to_Homepage {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 130px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#view_booking_history {
+    background-color: green;
+    color: white;
+    margin-left: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+#back_to_Homepage:hover{
+    background-color: blue;
+    border: 1px solid rgb(16, 23, 211);
+    border-radius: 5px;
+}
+#view_booking_history:hover{
+    background-color: blue;
+    border: 1px solid rgb(16, 23, 211);
+    border-radius: 5px;
+}
+
+
+
+    

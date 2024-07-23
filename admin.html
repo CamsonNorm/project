@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="adminstyle.css">
+    <script src="admin.js"></script>
+</head>
+<body>
+    <p id="booking_Id_test1" display="none"></p>
+    <div class="admin_links">
+        <ul>
+          <li><a href="admin.html">HOME</a></li>
+          <li><a href="#" id="open_users_page">USERS</a></li>
+          <li><a href="#" id="open_vehicle_page">VEHICLE</a></li>
+          <li><a href="#" id="open_new_bookings">NEW BOOKINGS</a></li>
+          <li><a href="#" id="open_reports_page">REPORTS</a></li>
+          <li><a href="logout.php">LOGOUT</a></li>
+        </ul>
+    </div>
+    <!-- MAIN DASHBOARD -->
+    <div class="admin_dashboard" id="admin_dashboard">
+        <h1>WELCOME TO ADMIN PAGE</h1>
+    </div>
+    <!-- users page -->
+    <div class="users_div" id="users_div">
+        <h1>A list of Users</h1>
+            <select name="select_users" id="select_users">
+                <option value="">choose</option>
+                <option value="1">Admins</option>
+                <option value="2">Drivers</option>
+                <option value="3">Dispatchers</option>
+                <option value="4">Customers</option>
+            </select>
+        <!--  staff list The Admin, Drivers, and Dispatchers -->
+        <div id="staffList" style="display: none ;">
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email address</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="staffTableList"  class="staffTableList">
+                      
+                </tbody>
+             </table>
+        </div>
+
+        <!--  staff list The Admin, Drivers, and Dispatchers -->
+        <div id="staffList" style="display: none ;">
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email address</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="staffTableList"  class="staffTableList">
+                      
+                </tbody>
+            </table>
+        </div>
+
+        <!-- customer list -->
+        <div id="customersList" style="display: none;">
+            <table id="customerTable">
+                <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                            <th>Email address</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerTableList"  class="customerTableList">
+                       
+                    </tbody>
+            </table>
+        </div> 
+
+
+    </div>
+    <!-- Vehilces  -->
+    <div class="vehicle" id="vehicle">
+        <h1>Vehicles</h1>
+        <div class="vehicle_dashboard" id="vehicle_dashboard">
+            <ul>
+                <li><a href="#" id="display_form_to_add_vehicle">Add Vehicle</a></li> 
+                <li><a href="#" id="display_list_of_vehicles">Vehicle List</a></li>
+                
+            </ul>
+        </div>
+        <div class="add_vehicle" id="add_vehicle">
+            <p>To add a vehicle</p>
+            <!-- form to add a vehicle -->
+            <form action="Addingvehicleinfor.php" class="add_vehicle_form" id="add_vehicle_form" method="post">
+                <!-- vehicle details -->
+                <div class="add_form">
+                    <div class="vehicle_form">
+                        <label for="type">Enter Vehicle Type</label>
+                        <select name="vehicle-type" id="vehicle-type">
+                            <option value="">Select Vehicle Type</option>
+                            <option value="Big-Truck">Truck</option>
+                            <option value="PickUp">PickUp</option>
+                            <option value="Lory">Lory</option>
+                        </select>
+                        <label for="plate-no">Enter Plate Number</label>
+                        <input type="text" name="plate-no" id="plate-no" placeholder="Enter Plate Number" required>
+                        <label for="Model">Enter Model</label>
+                        <input type="text" name="model" id="modle" placeholder="Enter Model" required>
+                        <label for="Make">Enter Make</label>
+                        <input type="text" name="make" id="make" placeholder="Enter Make" required>
+                    </div>
+                    <div class="vehicle_form">
+                        <label for="capacity">Enter Capicity</label>
+                        <input type="text" name="capacity" id="capacity" placeholder="Enter Capacity" required>
+                        <!-- <label for="status">Enter Status</label>
+                        <input type="text" name="status" id="status" placeholder="Enter status" required> -->
+                        <label for="insurance">Enter vehicle insurance</label>
+                        <input type="text" name="insurance" id="insurance" placeholder="Enter vehicle insurance" required>
+                        <label for="fuel">Enter Fuel Type</label>
+                        <select name="fuel-type" id="fuel-type">
+                            <option value="">Select Fuel Type</option>
+                            <option value="petrol">Petrol</option>
+                            <option value="disel">Disel</option>
+                            <option value="electricity">Electricity</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" name="Add">Add</button>
+            </form>
+        </div>
+
+        <div class="show_list_of_vehicle" id="show_list_of_vehicle">
+            <div class="vehicle_list" id="vehicle_list">
+                <h1>List of Vehicles</h1>
+                <table id="listof_Vehicle" class="listof_Vehicle">
+                    <thead>
+                        <tr>
+                            <th>Vehicle ID</th>
+                            <th>Vehilce Type</th>
+                            <th>Plate Number</th>
+                            <th>Model</th>
+                            <th>Make</th>
+                            <th>Vehilce Insurance No</th>
+                            <th>Capacity</th>
+                            <th>Fuel Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listof_VehicleTable" class="listof_VehicleTable">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+     <!--New bookings page  -->
+     <div class="new_bookings" id="new_bookings">
+        <!-- new bookings -->
+        <div class="book_information" id="book_information">
+            <p>Booking Information</p>
+            <table id="bookings-infor">
+                <thead>
+                    <tr>
+                        <th>Booking Id</th>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Vehicle Type</th>
+                        <th>Vehicle ID</th>
+                        <th>Plate Number</th>
+                        <th>Goods Type</th>
+                        <th>Description</th>
+                        <th>Weight</th>
+                        <th>Pickup Location</th>
+                        <th>Dropoff Location</th>
+                        <th>Booking Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsList"  class="bookingsList"></tbody>
+            </table>
+        </div>
+        <div id="booking_details" ></div>
+     </div>
+    
+    <div class="report_page" id="report_page">
+        <h1>REPORTS</h1>
+        <div class="reports_elements">
+            <p id="vehicle_Reports_display">Vehicle Reports</p>
+            <p id="customers_Reports_display">Customers Reports</p>
+            <p id="bookings_Reports_display">Bookings Reports</p>
+            <p id="goods_reports_display">Goods Reports</p>
+            <p id="schedule_Trnasport">Schedules Reports</p> 
+            <p id="completed_Transport">Completed Reports</p>
+        </div>
+        <div id="vehicle_Reports"class="vehicle_Reports" >
+            <h1>VEHICLES REPORT</h1>
+            <h1>Search Vehicle By Type</h1>
+            <button id="all_vehicle_button" >All Vehicles Booked</button>
+            <form action="#" id="search_vehicle_Form" class="search_vehicle_Form">
+                <select name="vehicle_options" id="vehicle_options">
+                    <option value="lory">Lory</option>
+                    <option value="big_Truck">Big Truck</option>
+                    <option value="pickup">Pickup</option>
+                </select>
+                <button type="submit" class="search_vehicle">Search</button>
+            </form>
+            <div id="search_vehicle_Results" class="search_vehicle_Results"></div>
+             <table id="bookingReports" class="bookingReports" >
+                <thead>
+                    <tr>
+                        <th>Vehicle Type</th>
+                        <th>Plate Number</th>
+                        <th>Vehcile Capacity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookedVehicleList"  class="bookedVehicleList">
+                   
+                </tbody>
+               </table>
+        </div>
+        <div id="customers_Reports" class="customers_Reports">
+            <h2>CUSTOMERS REPORT</h2>
+            <p>Search By Phone Number</p>
+            <button id="display_all_customers"> View All Customers</button>
+            <form action="#" id="search_form_customer" class="search_form_customer">
+                <label for="phone_number">Enter Phone Number</label>
+                <input type="text" name="phone" id="phone" required>
+                <button type="submit" id="customer_search_button">Search</button>
+            </form>
+            <div id="search_customer_Results" class="search_customer_Results"></div>
+            <table id="customersReport" class="customersReport" >
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Booking Date</th>
+                    </tr>
+                </thead>
+                <tbody id="customersReportTable"  class="customersReportTable">
+                </tbody>
+               </table> 
+        </div>
+        <!-- Goods Reports -->
+        <div id="goods_Reports" class="goods_Reports">
+            <h2>GOODS REPORT</h2>
+            <p>Search By Phone Type</p> 
+            <button id="display_all_goods"> View All Customers</button>
+            <form action="#" id="search_form_goods" class="search_form_goods">
+                <select name="goods_type_select" id="goods_type_select">
+                    <option value="fragile">Fragile</option>
+                    <option value="perishable">Perishable</option>
+                    <option value="hazardous">Hazardous </option>
+                </select>
+                <button type="submit" >Search</button>
+            </form>
+            <div id="search_goods_Results" class="search_goods_Results"></div>
+            <table id="goodsReports" class="goodsReports" >
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Type</th>
+                        <th>Weight</th>
+                        <th>Description</th>
+                        <th>Pickup Location</th>
+                        <th>Dropoff Location</th>
+                        <th>Booking date</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Vehicle Type</th>
+                        <th>Plate</th>
+                    </tr>
+                </thead>
+                <tbody id="goodsReportsTable"  class="goodsReportsTable">
+                </tbody>
+               </table> 
+        </div>
+        <div class="bookings_Reports" id="bookings_Reports">
+            <h1>BOOKINGS REPORTS</h1>
+            <h1>Search Bookings</h1>
+            <form id="search_Form" class="search_Form">
+                <select name="search_options" id="search_options">
+                   
+                    <option value="today">Today</option>
+                    <option value="this_week">This Week</option>
+                    <option value="last_week">Last Week</option>
+                    <option value="this_month">This Month</option>
+                    <option value="last_month">Last Month</option>
+                    <option value="this_year">This Year</option>
+                </select>
+                <button type="submit" class="search_button">Search</button>
+            </form>
+            <div id="bookings_results" class="booking_results"></div>
+        </div>
+    </div> 
+<!-- Shedule Transports -->
+<div class="scheduledTransport" id="scheduledTransport"> 
+    <h2>Scheduled Transport</h2>
+    <table id="assignedTodriverBookings" class="assignedTodriverBookings">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Customer name</th>
+                <th>Customer Phone</th>
+                <th>Goods Type</th>
+                <th>Wieght</th>
+                <th>Vehicle Type</th>
+                <th>Plate</th>
+                <th>Picku Location</th>
+                <th>Drop Off Location</th>
+                <th>Driver ID</th>
+                <th>Driver Name</th>
+                <th>Driver Phone</th>
+                <th>Booking Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="assignedTodriverBookingsTable"  class="assignedTodriverBookingsTable" > 
+           <!-- assigned to driver list will be displayed on this section -->
+        </tbody>
+       </table>
+</div>
+<!-- Complete Transport -->
+<div class="CompleteTransport" id="CompleteTransport"> 
+    <h2>Complete Transports</h2>
+    <table id="transportCompleted" class="transportCompleted">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Cus-name</th>
+                <th>Phone</th>
+                <th>Goods Type</th>
+                <th>Weight</th>
+                <th>Vehicle Type</th>
+                <th>Plate</th>
+                <th>Driver Name</th>
+                <th>Driver ID</th>
+                <th>Driver Phone</th>
+                <th>Driver Name</th>
+                <th>Payment Number</th>
+                <th>Payment Code</th>
+                <th>Amount Paid</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="completeTransportTable"  class="completeTransportTable" > 
+           <!-- complete transport list will be displayed on this section -->
+        </tbody>
+</div>
+    
+
+<script>
+document.getElementById('open_users_page').addEventListener('click', function(){
+    document.getElementById('users_div').style.display = "block";
+    document.getElementById('vehicle').style.display = "none";
+    document.getElementById('report_page').style.display = "none";
+    document.getElementById('new_bookings').style.display = "none";
+});
+document.getElementById('open_vehicle_page').addEventListener('click', function(){
+    document.getElementById('vehicle').style.display = "block";
+    document.getElementById('users_div').style.display = "none";
+    document.getElementById('report_page').style.display = "none";
+    document.getElementById('new_bookings').style.display = "none";
+});
+document.getElementById('open_new_bookings').addEventListener('click', function(){
+    document.getElementById('new_bookings').style.display = "block";
+    document.getElementById('users_div').style.display = "none";
+    document.getElementById('vehicle').style.display = "none";
+    document.getElementById('report_page').style.display = "none";
+});
+document.getElementById('open_reports_page').addEventListener('click', function(){
+    document.getElementById('report_page').style.display = "block";
+    document.getElementById('users_div').style.display = "none";
+    document.getElementById('vehicle').style.display = "none";
+    document.getElementById('new_bookings').style.display = "none";
+});
+// Event listners to open reports
+// 1. To open vehicles reporst
+document.getElementById('vehicle_Reports_display').addEventListener('click', function() {
+    document.getElementById('vehicle_Reports').style.display = 'block';
+    document.getElementById('CompleteTransport').style.display = 'none';
+    document.getElementById('scheduledTransport').style.display = 'none';
+    document.getElementById('goods_Reports').style.display = 'none';
+    document.getElementById('bookings_Reports').style.display = 'none';
+    document.getElementById('customers_Reports').style.display = 'none';
+});
+// 2. To open ccustomer reports
+document.getElementById('customers_Reports_display').addEventListener('click', function() {
+    document.getElementById('customers_Reports').style.display = 'block';
+    document.getElementById('vehicle_Reports').style.display = 'none';
+    document.getElementById('CompleteTransport').style.display = 'none';
+    document.getElementById('scheduledTransport').style.display = 'none';
+    document.getElementById('goods_Reports').style.display = 'none';
+    document.getElementById('bookings_Reports').style.display = 'none';
+});
+// 3. To bookings reports 
+document.getElementById('bookings_Reports_display').addEventListener('click', function() {
+    document.getElementById('bookings_Reports').style.display = 'block';
+    document.getElementById('customers_Reports').style.display = 'none';
+    document.getElementById('vehicle_Reports').style.display = 'none';
+    document.getElementById('CompleteTransport').style.display = 'none';
+    document.getElementById('scheduledTransport').style.display = 'none';
+    document.getElementById('goods_Reports').style.display = 'none';
+});
+// 3. To goods reports
+document.getElementById('goods_reports_display').addEventListener('click', function() {
+    document.getElementById('goods_Reports').style.display = 'block';
+    document.getElementById('bookings_Reports').style.display = 'none';
+    document.getElementById('customers_Reports').style.display = 'none';
+    document.getElementById('vehicle_Reports').style.display = 'none';
+    document.getElementById('CompleteTransport').style.display = 'none';
+    document.getElementById('scheduledTransport').style.display = 'none';
+});
+// 4. To schedule reports   
+document.getElementById('schedule_Trnasport').addEventListener('click', function() {
+    document.getElementById('scheduledTransport').style.display = 'block';
+    document.getElementById('goods_Reports').style.display = 'none';
+    document.getElementById('bookings_Reports').style.display = 'none';
+    document.getElementById('customers_Reports').style.display = 'none';
+    document.getElementById('vehicle_Reports').style.display = 'none';
+    document.getElementById('CompleteTransport').style.display = 'none';
+});
+// 4. To completed reports    
+document.getElementById('completed_Transport').addEventListener('click', function() {
+    document.getElementById('CompleteTransport').style.display = 'block';
+    document.getElementById('scheduledTransport').style.display = 'none';
+    document.getElementById('goods_Reports').style.display = 'none';
+    document.getElementById('bookings_Reports').style.display = 'none';
+    document.getElementById('customers_Reports').style.display = 'none';
+    document.getElementById('vehicle_Reports').style.display = 'none';
+});
+function opneAdimnList(){
+    fetchStaffList('Admin');
+    document.getElementById('staffList').style.display = 'block';
+    document.getElementById('customersList').style.display = 'none';
+}
+// fucntion to show drivers list
+function openDriversList() {
+    fetchStaffList('Driver');
+    document.getElementById('staffList').style.display = 'block';
+    document.getElementById('customersList').style.display = 'none';
+}
+// function to show dispatchers list
+function openDispatchersList() {
+    fetchStaffList('Dispatcher');
+    document.getElementById('staffList').style.display = 'block';
+    document.getElementById('customersList').style.display = 'none';
+}
+// fucntion to open customers list
+function opneCustomersList() {
+    document.getElementById('staffList').style.display = 'none';
+    document.getElementById('customersList').style.display = 'block';
+}
+// to open vehicle list  
+document.getElementById('display_list_of_vehicles').addEventListener('click', function() { 
+    document.getElementById('vehicle_list').style.display = 'block';
+    document.getElementById('add_vehicle').style.display = 'none';
+});
+document.getElementById('display_form_to_add_vehicle').addEventListener('click', function() { 
+    document.getElementById('add_vehicle').style.display = 'block';
+    document.getElementById('vehicle_list').style.display = 'none';
+});
+
+// Add event listener to the custom select
+// Reason for adding event listener to an html element or content is to define  behavior that should occur in response to user action.
+//.addEventLIstener() is a method used to add event listener to an HTML element
+document.getElementById('select_users').addEventListener('change', function() {
+    // The use of change as an event listener is to allow a respond to changes in the value of an input, or selected element like the below scenario
+    // it is used for dynamic updates
+    // fucntion - is an event Handler or callback fucntion.
+     const selectedValue = this.value;
+     // this.value retrieve the current value of the html element that trigerred the event, and assigned it to the variable selectedValue.
+     switch (selectedValue) {
+         case '1':
+            opneAdimnList();
+             break;
+        case '2':
+            openDriversList();
+            break;
+        case '3':
+            openDispatchersList();
+            break;
+        case '4':
+             opneCustomersList(fetchCustomersList());
+             break;
+        default:
+             break;
+             //break is used for exiting
+  }
+});
+
+// Admin list 
+// function to display staff list.
+function fetchStaffList(staffcategory) {
+    //server 
+    fetch(`staffList.php?staffcategory=${staffcategory}`)
+    // fetch() is a javascript function used to make an HTTP request to the server. it return a promise that resolve to response
+    .then(response => response.text())
+         .then(staffs_list => {
+            const tableBody = document.getElementById('staffTableList');
+            // clean the existing row table
+            tableBody.innerHTML = ''; 
+            if(staffs_list.trim().length > 0){
+                // to split data into rows using the newline
+                let rows = staffs_list.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    // to split rows into column usin ',' separator
+                    let tr = document.createElement('tr');
+                      // to create a new table
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 3;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }      
+         })
+       
+}
+
+// Javascript script to retrieve users of the system. drivers, admins, dispatchers, and customers
+//  function to fetch customer list from the server
+function fetchCustomersList() {
+    //server to fetch users list
+    fetch('CustomersList.php')
+    .then(response => response.text())
+         .then(customers_list => {
+            const tableBody = document.getElementById('customerTableList')
+            // clean the existing row table
+            tableBody.innerHTML = ''; 
+            if(customers_list.trim().length > 0){
+                // to split data into rows using the newline
+                let rows = customers_list.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    // to split rows into column usin ',' separator
+                    let tr = document.createElement('tr');
+                      // to create a new table
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 3;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }        
+         })
+}
+// To display lis of vehicles
+document.getElementById('display_list_of_vehicles').addEventListener('click', function(){
+    // function listofVehilces(){
+    //fetch vehilces form the database using a server
+    fetch('Retrievevehicleinfor.php')
+        .then(response => response.text())
+        .then(vehilces => {
+            //vehicleslist - contain the data of the promise.
+            // you can create a function outside this code to display the vehicle list and call the function here.
+            const tableBody = document.getElementById('listof_VehicleTable')
+            // clean existing table row
+            tableBody.innerHTML = '';
+            if(vehilces.trim().length > 0){
+                let rows = vehilces.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    let tr = document.createElement('tr');
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    const actionButton = document.createElement('td');
+                    const DeleteButton = document.createElement('button');
+                    DeleteButton.setAttribute('id', 'delete_vehicle_button');
+                    DeleteButton.innerHTML = "Delete";
+                    DeleteButton.addEventListener('click', function(){
+                        const vehicle_ID = columns[0];
+                        //alert(vehicle_ID);
+                        // sending data
+                        const sendingVehicle_ID = `vehicle_ID=${encodeURIComponent(vehicle_ID)}`;
+                        // Create an XMLHttpRequest object
+                        const xhr = new XMLHttpRequest();
+                       xhr.open('POST', 'deleteVehicle.php', true);
+                       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                       // what will happen after sending data
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === XMLHttpRequest.DONE) {
+                                if(xhr.status === 200) {
+                                   alert(xhr.responseText);                       
+                                } else {
+                                    alert('Error:' + xhr.status);
+                               }
+                            }
+                        };
+                        // Send the request to the server
+                        xhr.send(sendingVehicle_ID);
+                    });
+                    actionButton.appendChild(DeleteButton);
+                    tr.appendChild(DeleteButton);
+
+                    tableBody.appendChild(tr);
+                });
+               
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 3;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }           
+        });
+});
+// New bookings
+window.addEventListener('load',  fetchbookings())
+function fetchbookings(){
+    // fetch() is a build in fucntion used to make a request for fetching resources from a server.
+    fetch('fetchbookings.php') // to initiate a GET request to  a specific URL fetchbookings.php
+    // .then() is used for handlin response asynchronously - it is a or like a callback fucntion
+         .then(response => response.text())
+         // this second then() callback fucntion recieve the parsed data as its argument for processing it.
+         .then(data => {
+        const tBody = document.getElementById('bookingsList');
+        tBody.innerHTML = '';
+        const bookings = data.split('\n');
+        bookings.forEach(booking => {
+            const fields = booking.split(',');
+            const row = document.createElement('tr');
+
+            fields.forEach(field => {
+                const cell = document.createElement('td');
+                cell.textContent = field;
+                row.appendChild(cell);
+            });
+
+            const actionButton = document.createElement('td');
+            const updateButton = document.createElement('button');
+            updateButton.innerHTML = "Update";
+            updateButton.addEventListener('click', function(){
+               
+                const bookingID = fields[0];
+                const user_id = fields[1];
+                const name = fields[2];
+                const email = fields[3];
+                const phone = fields[4];
+                const vehicleType = fields[5];
+                const vehicleID = fields[6];
+                const vehiclePlate = fields[7];
+                const goodsType = fields[8];
+                const description = fields[9];
+                const wieght = fields[10];
+                const pickupLocation = fields[11];
+                const dropoffLocation = fields[12];
+                const date = fields[13];
+                // sending data
+                const dataTosend = `bookingID=${encodeURIComponent(bookingID)}&user_id=${encodeURIComponent(user_id)}&name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)} &vehicleType=${encodeURIComponent(vehicleType)}&vehicleID=${encodeURIComponent(vehicleID)}&vehiclePlate=${encodeURIComponent(vehiclePlate)}&goodsType=${encodeURIComponent(goodsType)}&description=${encodeURIComponent(description)}&wieght=${encodeURIComponent(wieght)}&pickupLocation=${encodeURIComponent(pickupLocation)}&dropoffLocation=${encodeURIComponent(dropoffLocation)}&date=${encodeURIComponent(date)}`;
+                // Create an XMLHttpRequest object
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'sendingTrasactionInfor.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                // what will happen after sending data
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if(xhr.status === 200) {
+                        alert(xhr.responseText);
+                        adminUpdatingBooking();
+                     } else {
+                        alert('Error:' + xhr.status);
+                    }
+                 }
+                };
+                // Send the request to the server
+                xhr.send(dataTosend);
+            });
+
+            function adminUpdatingBooking(){
+                const bookingID_update = fields[0];
+                const data_To_send = `bookingID_update=${encodeURIComponent(bookingID_update)}`;
+                // updateBookin_by_bookingID = `bookingID=${bookingID}`;
+                document.getElementById('booking_Id_test1').textContent = data_To_send;
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'adminUpdatinfReceivedBooking.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                // what will happen after sending data
+                xhr.onreadystatechange = function () {
+               if (xhr.readyState === XMLHttpRequest.DONE) {
+                 if(xhr.status === 200) {
+                     alert(xhr.responseText);
+                } else {
+                  alert('Error:' + xhr.status);
+                }
+               }
+              };
+             // Send the request to the server
+             xhr.send(data_To_send);
+            }
+
+
+            actionButton.appendChild(updateButton);
+            row.appendChild(actionButton);
+
+            tBody.appendChild(row);
+        });
+    });
+}
+
+
+// Bookings Search
+document.getElementById('search_Form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const timeRange = document.getElementById("search_options").value;
+        fetch('bookingsSearch.php', {
+            method: 'POST',
+            body: 'timeRange=' + encodeURIComponent(timeRange),
+            headers: {'Content-Type' : 'application/x-www-form-urlencoded' }
+    })
+    .then(response => response.text())
+    .then(data => {
+        let bookingsResultsContainer = document.getElementById('bookings_results');
+        bookingsResultsContainer.innerHTML = '';
+        if (data.trim().length > 0) {
+            // checking if data is not empty and strimming it to remove any whitespace. 
+          let rows = data.trim().split('\n');
+          // this trims any leading or trailing whitespace from data and spliting it into an array of rows
+
+          // now creating a table and hadding a header row with columns for the following. 
+          let table = "<table><tr><th>booking ID</th><th>booking Date</th><th>Name</th><th>Phone</th><th>Email</th><th>Goods Type</th> <th>Description</th> <th>Weight</th> <th>Pickup Location</th> <th>Dropoff Location</th>  </th><th>Vehicle Type</th> <th>Plate Number</th></tr>";
+            // now lopping through rows to create table rows 
+            rows.forEach(row => {
+                // this iterates over each row in the rows array. and split the string by commas to get an array of columns
+                // it then appends a new row to the table string using the column data for each cell. 
+                let columns = row.split(',');
+                table += `<tr><td>${columns[0]}</td><td>${columns[1]}</td><td>${columns[2]}</td><td>${columns[3]}</td><td>${columns[4]}</td><td>${columns[5]}</td><td>${columns[6]}</td><td>${columns[7]}</td><td>${columns[8]}</td><td>${columns[9]}</td><td>${columns[10]}</td><td>${columns[11]}</td></tr>`;
+            });
+            table += "</table>";
+            bookingsResultsContainer.innerHTML = table;
+        } else {
+
+            bookingsResultsContainer.innerHTML = '<p>No vehicle booked found for the selected Type.</p>';
+        }
+    });
+});
+
+// All booked Vehicles
+document.getElementById('all_vehicle_button').addEventListener('click', function() {
+    fetch('vehiclebooked.php')
+        .then(response => response.text())
+        .then(vehicles => {
+            const tableBody = document.getElementById('bookedVehicleList');
+            //clean the existing row table
+            tableBody.innerHTML = '';
+            if(vehicles.trim().length > 0){
+                // to split data into rows using the newline
+                let rows = vehicles.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    // to split rows into column usin ',' separator
+                    let tr = document.createElement('tr');
+                      // to create a new table
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 3;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        });
+});
+// searching booked vehicles by type
+document.getElementById('search_vehicle_Form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const vehicleType = document.getElementById("vehicle_options").value;
+        fetch('vehiclebookedSearch.php', {
+            method: 'POST',
+            body: 'vehicleType=' + encodeURIComponent(vehicleType),
+            headers: {'Content-Type' : 'application/x-www-form-urlencoded' }
+    })
+    .then(response => response.text())
+    .then(data => {
+        let bookedVehicleResultsContainer = document.getElementById('search_vehicle_Results');
+        bookedVehicleResultsContainer.innerHTML = '';
+
+        if (data.trim().length > 0) {
+            // checking if data is not empty and strimming it to remove any whitespace. 
+          let rows = data.trim().split('\n');
+          // this trims any leading or trailing whitespace from data and spliting it into an array of rows
+
+          // now creating a table and hadding a header row with columns for the following. 
+          let table = "<table><tr><th>vehicle Type</th><th>vehicle plate</th><th>Capacity</th><th>Status</th>";
+            // now lopping through rows to create table rows 
+            rows.forEach(row => {
+                // this iterates over each row in the rows array. and split the string by commas to get an array of columns
+                // it then appends a new row to the table string using the column data for each cell. 
+                let columns = row.split(',');
+                table += `<tr><td>${columns[0]}</td><td>${columns[1]}</td><td>${columns[2]}</td><td>${columns[3]}</td></tr>`;
+            });
+            table += "</table>";
+            bookedVehicleResultsContainer.innerHTML = table;
+        } else {
+
+            bookedVehicleResultsContainer.innerHTML = '<p>No vehicle booked found for the selected Type.</p>';
+        }
+    });
+});
+// Search for customer
+document.getElementById('search_form_customer').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const phonenumber = document.getElementById('phone').value;
+        fetch('customerSearch.php', {
+            method: 'POST',
+            body: 'phonenumber=' + encodeURIComponent(phonenumber),
+            headers: {'Content-Type' : 'application/x-www-form-urlencoded' }
+    })
+    .then(response => response.text())
+    .then(data => {
+        let customerResults = document.getElementById('search_customer_Results');
+        customerResults.innerHTML = '';
+        // now handle the response from the server. 
+        if (data.trim().length > 0) {
+            // checking if data is not empty and strimming it to remove any whitespace. 
+          let rows = data.trim().split('\n');
+          // this trims any leading or trailing whitespace from data and spliting it into an array of rows
+
+          // now creating a table and hadding a header row with columns for the following. 
+          let table = "<table><tr><th>Customer ID</th><th>Name</th><th>Phone</th><th>Email</th><th>boooking ID</th><th>goods Type</th><th>Pickup Location</th><th>Dropoff Location</th>";
+            // now lopping through rows to create table rows 
+            rows.forEach(row => {
+                // this iterates over each row in the rows array. and split the string by commas to get an array of columns
+                // it then appends a new row to the table string using the column data for each cell. 
+                let columns = row.split(',');
+                table += `<tr><td>${columns[0]}</td><td>${columns[1]}</td><td>${columns[2]}</td><td>${columns[3]}</td><td>${columns[4]}</td>
+                          <td>${columns[5]}</td><td>${columns[6]}</td><td>${columns[7]}</td></tr>`;
+            });
+            table += "</table>";
+            customerResults.innerHTML = table;
+        } else {
+
+            customerResults.innerHTML = '<p>No customer found.</p>';
+        }
+
+    });
+});
+// All customers
+document.getElementById('display_all_customers').addEventListener('click', function() {
+    fetch('All_customer_maked_booking.php')
+        .then(response => response.text())
+        .then(customers => {
+            const tableBody = document.getElementById('customersReportTable');
+            //clean the existing row table
+            tableBody.innerHTML = '';
+            if(customers.trim().length > 0){
+                let rows = customers.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    let tr = document.createElement('tr');
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 3;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        })
+        //.catch(erro => console.error('Error fetching vehicles booked', error));
+});  
+//All goods
+document.getElementById('display_all_goods').addEventListener('click', function() {
+    fetch('All_good_and_bookings.php')
+        .then(response => response.text())
+        .then(goods => {
+            const tableBody = document.getElementById('goodsReportsTable');
+            //clean the existing row table
+            tableBody.innerHTML = '';
+            if(goods.trim().length > 0){
+                let rows = goods.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    let tr = document.createElement('tr');
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 12;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        })
+});
+// Goods Search
+document.getElementById('search_form_goods').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const goods_option = document.getElementById("goods_type_select").value;
+    fetch('goodsSearch.php', {
+    method: 'POST',
+    body: 'goods_option=' + encodeURIComponent(goods_option),
+    headers: {
+        'Content-Type' : 'application/x-www-form-urlencoded'
+    }
+    })
+    .then(response => response.text())
+    .then(data => {
+        let goodsResultsContainer = document.getElementById('search_goods_Results');
+        goodsResultsContainer.innerHTML = '';
+        // now handle the response from the server. 
+        if (data.trim().length > 0) {
+            // checking if data is not empty and strimming it to remove any whitespace. 
+          let rows = data.trim().split('\n');
+          // this trims any leading or trailing whitespace from data and spliting it into an array of rows
+
+          // now creating a table and hadding a header row with columns for the following. 
+          let table = "<table><tr> <th>Gods Type</th><th>Description</th><th>Weight</th><th>Pickup Location</th><th>Dropoff Location</th><th>Booking ID</th> <th>Booking Date</th><th>Name</th><th>Phone</th> <th>Email</th><th>Vehicle Type</th><th>Vehicle Plate</th> </tr>";
+            // now lopping through rows to create table rows 
+            rows.forEach(row => {
+                // this iterates over each row in the rows array. and split the string by commas to get an array of columns
+                // it then appends a new row to the table string using the column data for each cell. 
+                let columns = row.split(',');
+                table += `<tr><td>${columns[0]}</td><td>${columns[1]}</td><td>${columns[2]}</td><td>${columns[3]}</td><td>${columns[4]}</td>
+                          <td>${columns[5]}</td><td>${columns[6]}</td><td>${columns[7]}</td><td>${columns[8]}</td><td>${columns[9]}</td>
+                          <td>${columns[10]}</td><td>${columns[11]}</td></tr>`;
+            });
+            table += "</table>";
+            goodsResultsContainer.innerHTML = table;
+        } else {
+
+            goodsResultsContainer.innerHTML = '<p>No Goods found for the selected Type.</p>';
+        }
+
+    });
+});
+// Schedule Transport
+document.getElementById('schedule_Trnasport').addEventListener('click', function() {
+     //fetch vehilces form the database using a server
+     fetch('showProgressTransaction.php')
+        .then(response => response.text())
+        .then(Transactions => {
+            const tableBody = document.getElementById('assignedTodriverBookingsTable')
+            tableBody.innerHTML = '';
+
+            if(Transactions.trim().length > 0){
+                let rows = Transactions.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    let tr = document.createElement('tr');
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 13;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        })
+});
+document.getElementById('completed_Transport').addEventListener('click', function() {
+     //fetching transport data from the database using a server
+     fetch('showCompletedTransports.php')
+        .then(response => response.text())
+        .then(Transports => {
+            //vehicleslist - contain the data of the promise.
+            // you can create a function outside this code to display the vehicle list and call the function here.
+            const tableBody = document.getElementById('completeTransportTable');
+            // clean existing table row
+            tableBody.innerHTML = '';
+
+            if(Transports.trim().length > 0){
+                let rows = Transports.trim().split('\n');
+                rows.forEach(row => {
+                    let columns = row.split(',');
+                    let tr = document.createElement('tr');
+                    columns.forEach(column => {
+                        let td = document.createElement('td');
+                        td.textContent = column;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.colSpan = 15;
+                td.textContent = "No information found";
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        })
+});
+</script>
+</body>
+</html>

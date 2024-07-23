@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camson Transport</title>
+    <!-- link to style -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- link with javascript -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <h1>Camson Transport</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Contcat Us</a></li>
+                <li><a href="#" onclick="toggleLoginForm()">Login</a></li>
+                <li><a href="#" onclick="toggleRegisterOptions()">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+    <!-- Register options -->
+    <div id="register-options" class="registration-options" >
+        <p>Register As</p>
+        <!-- register as a customer -->
+        <button onclick="toggleCustomerRegistrationForm()">Customer</button>
+        <!-- register as staff -->
+        <button onclick="toggleStaffRegistrationForm()">Staff</button>
+        <!-- button for closing registration options -->
+        <span class="close-registration-options" onclick="toggleRemoveRegistrationOptions()" style="font-size: larger;">&times;</span>
+        <!-- &times - used to display "X" -->
+    </div> 
+    <!-- Customer registration form -->
+    
+    <div class="customer-reg-container" id="customer-registration-form">
+        <div class="customer-form" id="customer-form">
+            <form action="CustomerRegistration.php" class="registration-form" id="customer-form-reg" method="post">
+                <h1>Customer Registration Form</h1>
+                <div class="customer-form-group">
+                    <div id="customerdetailsnameError" style="color: red; font-size: 12px;"></div>
+                    <label for="fname">Fisrt Name</label>
+                    <input type="text" id="fname" name="fname" placeholder="Firts Name" required>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                    <label for="username">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="phone number" required>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email Address" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Passowrd" required>
+                    <button type="submit" class="registerbtn" value="Register"  onclick="openLoginForm(event)">Register</button>
+                    <!-- hidding customer registration form -->
+                    <span class="close-button" onclick="hideCustomerForm()" style="font-size: larger;">&times;</span>
+                    <!-- Message element for displaying validation message -->
+                    <div id="customerEmptyError" style="color: red; font-size: 13px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top: 20px;"></div>
+                    
+                </div>
+            </form>
+            
+        </div>
+      </div>
+      <!-- staff registration form -->
+      <div class="staff-reg-container" id="staff-reg-container">
+        <div class="staff-form" id="staff-form">
+            <form action="StaffRegistration.php" method="post" id="staff-reg-form">
+                <h1>Staff Registration Form</h1>
+                <div class="staff_form_reg">
+                    <div class="form_1">
+                        <label for="role">Role:</label>
+                        <select name="role" id="role">
+                            <option value="Admin">Admin:</option>
+                            <option value="Dispatcher">Dispatcher:</option>
+                            <option value="Driver">Driver:</option>
+                        </select>
+                        <label for="staff_fname">Fisrt Name:</label>
+                        <input type="text" name="staff_fname" id="staff_fname" placeholder="First Name" required>
+                        <label for="staff_lname">Last Name:</label>
+                        <input type="text" name="staff_lname" id="staff_lname" placeholder="Last Name" required>
+                        <label for="staff_username">Username:</label>
+                        <input type="text" name="staff_username" id="staff_username" placeholder="Username" required>
+                        <label for="staff_email">Email</label>
+                        <input type="text" id="staff_email" name="staff_email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form_1">
+                        <label for="staff_phone">Phone Number:</label>
+                        <input type="text" name="staff_phone" id="staff_phone" placeholder="Phone" required>
+                        <label for="staff_address">Address:</label>
+                        <input type="text" name="staff_address" id="staff_address" placeholder="Address" required>
+                        <label for="id_number">ID Number:</label>
+                        <input type="text" name="id_number" id="id_number" required>
+                        <label for="staff_password">Password:</label>
+                        <input type="password" name="staff_password" id="staff_password" placeholder="Enter Password" required>
+                        <label for="staff_cpassword">Confirm Password:</label>
+                        <input type="password" name="staff_cpassword" id="staff_cpassword" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+                <button type="submit" value="Register" onclick="openStaffLoginForm(event)" >Register</button>
+                <span class="close-button" onclick="hideStaffForm()" style="font-size: larger;">&times;</span>
+                <!-- validating againest wrong inputs -->
+                <div id="staffError" style="color: red; font-size: 14px; text-align: center; font-weight: 300; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></div>
+                <!-- To Validate the form fields -->
+                <div id="staffEmptyError" style="color: red; font-weight: 300; font-size: 14px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top: 20px; text-align: center;"></div>
+            </form>
+        </div>
+      </div>
+      
+
+    <!-- Login form for both staffs and customers-->
+    <div class="login-popup" id="login-form">
+        <div class="login-container" id="login-container">
+            <h1>Login Form</h1>
+            <form action="login.php" method="POST" class="loginform-t" id="loginform-t">
+                <label for="username" >Enter Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Enter Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="login-button " >Login</button>
+                <div id="error-message" style="color: red; font-size: 13px; text-align: center;"></div>
+                <!-- hide login form -->
+                <span class="close-button" onclick="hideLoginForm()" style="font-size: larger;">&times;</span>
+
+               <a href="#" onclick="displayForgotpasswordpage()">Forgot Password</a>
+    
+            </form>
+        </div>
+        
+    </div>
+    
+    <!-- forgot password page -->
+    <div class="forgotpasswordpage" id="forgotpasswordpage">
+        <div class="forgotpassword">
+            <p>forgot password</p>
+            <span class="" onclick="hideForgotpasswordpage()" style="font-size: larger; cursor: pointer;">&times;</span>
+            <form action="Reset_password.php" id="forgotForm" class="forgotForm" method="POST">
+                <label for="usernameForgot">Enter Username:</label>
+                <input type="text" name="usernameForgot" id="usernameForgot" required>
+                <label for="Role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="Admin">Admin</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Dispatcher">Dispatcher</option>
+                </select>
+                <label for="newpassword">Enter New Password:</label>
+                <input type="password" name="newpassword" id="newpassword" required>
+                <label for="Confirmnewpassword">Confirm New Password:</label>
+                <input type="password" name="confirmnewpassword" id="confirmnewpassword" required>
+                <button type="submit">Reset Password</button>
+            </form>
+         </div>
+        
+
+    </div>
+
+    <!-- main section content -->
+    <div class="m-section">
+        <div class="f-section">
+            <h1>Welcome To Our Transport Service</h1>
+            <p>CMS Transport Company offers transportation sertvices  </p>
+            <ul>
+                <li><a href="#">Big Trucks</a>for transporting heavy cargos</li>
+                <li><a href="#">Lories </a>for transporting imedium cargos</li>
+                <li><a href="#">PickUps</a>for transporting variuos goods  </li>
+                <li><a href="#">Containers</a>for transportation and storing goods</li>
+            </ul>
+            <p>Book your transport at a realiable and affordable price. 
+             Your transportation will be on time and as stated according to customers' conditions.</p>
+            <p>We concider goods safety and dilivering in a good condion and on time!</p>
+        </div>
+        <div class="l-section">
+            <p>Services and Photfolios</p>
+            <div class="change-images">
+                <!-- <img id="changing-image" src="images/img2.jpg" alt="loading.."> -->
+                <img src="images/img2.jpg" style="margin-left: 100px; padding: 10px; height: 400px; width: 600px;" alt="loading...">
+                <div id="text-overlay">Best Transport Services</div>
+                <div id="line-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of main section content -->
+
+  </section>
+  <footer>
+    <div class="footer-f">
+        <div class="contact-us">
+            <h1>Contact Us</h1>
+            <p>You can contact us on:</p>
+            <ul>
+                <li>Mobile: +254782419389</li>
+                <li>Email-Address: camsontransport@gmail.com</li>
+                <li>Facebook</li>
+            </ul>
+        </div>
+
+        <div class="about-us">
+            <h1>About Us</h1>
+            <p>Our journey towards success is intertwined with the satisfaction
+                 and happiness of our valued Transportation. </p>
+            <p>With a passion for excellence,
+                we continuously strive to surpass expectations, 
+               going above and beyond to ensure your complete satisfaction.</p>
+            
+        </div>
+
+        <div class="our-services">
+            <h1>Our Services</h1>
+            <p>we provide the following services</p>
+            <ul>
+                <li><a href="">Big Truck Transportation</a></li>
+                <li><a href="">Lories Transportation</a></li>
+                <li><a href="">Containers Transportation</a></li>
+                <li><a href="">PickUp Transportation</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="footer-m">
+       
+        <div class="news-updates">
+            <h1>Daily News</h1>
+            <p>Get our daily reports and updates</p>
+            <form action="#">
+                <label for="email">Enter Email</label>
+                <input type="text" name="update-email" id="update-email"  placeholder="Email Address" required>
+                <button type="updates" class="updates" value="subscribe">Subscribe</button>
+            </form>
+        </div>
+        <div class="other">
+            <h1>other</h1>
+        </div>
+       
+    </div>
+    <hr>
+    <div class="footer-l">
+        
+        <div class="company-name">
+            <p>CAMSONTRANSPORTCOMPANY</p>
+        </div>
+        <div class="copy">
+            <p>&copy; 2024camsontransportcompany.All rights reserverd.</p>
+        </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

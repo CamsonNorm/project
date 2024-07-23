@@ -1,0 +1,702 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.admin_links{
+    padding: 10px;
+    background-color: antiquewhite;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid antiquewhite;
+    border-radius: 5px;
+}
+.admin_links ul{
+    display: flex;
+    justify-content: center;
+}
+.admin_links ul li{
+    list-style: none;
+    padding: 5px 30px;
+}
+.admin_links ul li a{
+    text-decoration: none;
+    font-size: 17px;
+    color: blue;
+}
+.admin_links ul li a:hover{
+    color: crimson;
+}
+/* main dashboard */
+.admin_dashboard h1{
+    color: blue;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* users style */
+.users_div {
+   background-color: rgb(245, 245, 245);
+   width: auto;
+   height: auto;
+   border: 1px solid whitesmoke;
+   border-radius: 5px;
+   margin-left: 250px;
+   margin-right: 250px;
+   margin-top: 20px;
+   margin-bottom: 50PX;
+   display: flex;
+   flex-direction: column;
+   display: none;
+}
+.users_div h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+.users_div select {
+   width: 100px;
+   border: 1px solid grey;
+   border-radius: 5px;
+   color: black;
+   margin:10px 460px;
+}
+.users_div table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.users_div th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.users_div th {
+    background-color: #f2f2f2;
+    color: black;
+    font-size: 13px;
+    font-weight: 150;
+}
+.staffTableList {
+    background-color: white;
+    
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.staffTableList tr td {
+    color: black;
+    font-weight: 100;
+}
+.customerTableList {
+    background-color: white;
+    
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.customerTableList tr td {
+    color: black;
+    font-weight: 100;
+}
+
+
+/* Vehicles */
+.vehicle {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    width: auto;
+    height: 551px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: none;
+     
+ }.vehicle h1{
+    text-align: center;
+ }
+ .vehicle_dashboard ul{
+    display: flex;
+    margin-left: 700px;
+ }
+ .vehicle_dashboard li{
+    list-style: none;
+    padding: 5px;
+    margin-left: 20px;
+    
+}
+ .vehicle_dashboard li a{
+    text-decoration: none;
+    color: blue;
+}
+.vehicle_dashboard li a:hover{
+    color: green;
+    text-decoration: underline;
+}
+ .vehicle h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 450;
+    font-size: 17px;
+    color: #3b20d3;
+    text-decoration: underline;
+}
+.add_vehicle {
+    display: none;
+    color: grey;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: white;
+    margin: 3px;
+}
+.add_vehicle p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #5244ae;
+    text-align: center;
+    text-decoration: underline;
+}
+.add_vehicle_form {
+    display: flex;
+    flex-direction: column;
+}
+.add_form{
+    display: flex;
+    justify-content: center;
+}
+.add_form label {
+    color: #00b345;
+    font-size: 11px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 15px;
+    padding: 7px;
+    font-weight: bold;
+}
+.add_form input[type='text'] {
+    padding: 3px;
+    margin-top:-7px;
+    margin-bottom: 8px;
+    color: grey;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    flex-flow: 1;
+}
+.add_form select {
+    padding: 2px;
+    margin-top:-7px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: grey;
+}
+.vehicle_form{
+    margin: 10px;
+    padding: 11px;
+   
+}
+.add_vehicle_form button[type='submit'] {
+    background-color: #94a0ac;
+    color: #fff;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    margin-left: 850px;
+    margin-bottom: 20px;
+}
+.add_vehicle_form .notification{
+    color: red;
+    font-size: 10px;
+    display: none;
+}
+
+/* List of vehicles */
+.vehicle_list {
+    /* align-items: center; */
+    background-color: rgb(245, 245, 245);
+    width: auto;
+    height: auto;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 20PX;
+    margin-left: 530px;
+    display: none;
+ }
+ .vehicle_list h1{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-weight: 450;
+     font-size: 20px;
+     color: #3b20d3;
+     text-decoration: underline;
+     text-align: center;
+     margin-left: -450px;
+ }
+ .list_of_vehicle {
+     margin-bottom: 30px;
+ }
+.listof_Vehicle thead th{
+background-color: #f2f2f2;
+border-bottom: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+font-weight: 100;
+font-size: 12px;
+}
+.listof_Vehicle tbody tr td{
+font-size: 12px;
+padding: 5px 10px;
+}
+.deactive_vehilce_button{
+    background-color: rgb(188, 188, 26);
+    border: 1px solid rgb(205, 205, 28);
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    color: black;
+}
+#delete_vehicle_button{
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 3px;
+    cursor: pointer;
+    color: white;
+    width: 70px;
+}
+ 
+
+
+/* New bookings */
+.new_bookings{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    width: auto;
+    height: 551px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: none;
+}
+.book_information p {
+    text-align: center;
+    color: black;
+    margin: 1px;
+    font-size: 15px;
+    text-decoration: underline;
+
+}
+.book_information table{
+    border-collapse: collapse;
+}
+.bookings_infor{
+    margin-left: 11px;
+    margin-bottom: 20px;
+}
+.book_information th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+.book_information tr button{
+   background-color: blue;
+   /* margin: 3px 8px; */
+   border: 1px solid blue;
+   border-radius: 4px;
+   color: white;
+   border: none;
+   cursor: pointer;
+}
+.book_information th {
+    
+    color: black;
+    font-size: 14px;
+    font-weight: 150;
+}
+.book_information tr td{
+    background-color: white;
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+
+/* Reports */
+.report_page{
+    margin-top: 40px;
+     background-color: white;
+     width: 90%;
+     border: 1px solid #eee6e6;
+     border-radius: 4px;
+     margin-left: 4%;
+     display: none;
+ }
+ .report_page h1{
+     text-align: center;
+     font-size: 17px;
+     padding: 4px;
+ }
+ .reports_elements p{
+     margin-left: 5px;
+     padding: 5px;
+     color: blue;
+     text-decoration: underline;
+     cursor: pointer;
+ }
+ .bookings_Reports {
+    border: 1PX solid rgb(226, 215, 215);
+     border-radius: 5PX;
+     margin-left: 170px;
+     margin-top: -250px;
+     width: 78%;
+     position: absolute;
+     display: none;
+ }
+ .search_Form select{
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 100px;
+    padding: 4px;
+    margin-bottom: 15px;
+    margin-left: 520px;
+ }
+ .search_Form .search_button {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 75px;
+ }
+ .booking_results {
+    border: 1px solid rgb(230, 215, 215);
+    border-radius: 5px;
+    margin-bottom: 20px;
+   
+ }
+ .booking_results th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.booking_results tr td{
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+}
+/* vehicles reports */
+.vehicle_Reports {
+    border: 1PX solid rgb(226, 215, 215);
+    border-radius: 5PX;
+    margin-left: 170px;
+    margin-top: -250px;
+    width: 78%;
+    position: absolute;
+    display: none;
+}
+#all_vehicle_button {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 150px;
+   position: absolute;
+   margin-left: 350px;
+    cursor: pointer;
+}
+.search_vehicle_Form select{
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 100px;
+    padding: 4px;
+    margin-bottom: 15px;
+    margin-left: 520px;
+ }
+ .search_vehicle_Form .search_vehicle {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 75px;
+    cursor: pointer;
+ }
+ .search_vehicle_Results{
+    border: 1px solid rgb(230, 215, 215);
+    border-radius: 5px;
+    margin-bottom: 20px;
+ }
+ .search_vehicle_Results table{
+    margin-left: 400px;
+ }
+ .bookingReports{
+    border: 1px solid rgb(230, 215, 215);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 98%;
+    margin-left: 10px;
+ }
+ .bookingReports th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.bookingReports tr td{
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+}
+/* Customers Reports */
+.customers_Reports {
+    border: 1PX solid rgb(226, 215, 215);
+    border-radius: 5PX;
+    margin-left: 170px;
+    margin-top: -250px;
+    width: 78%;
+    position: absolute;
+    color: #5244ae;
+    display: none;
+}
+.customers_Reports h2{
+    font-size: 15px;
+    margin-left: 450px;
+}
+.customers_Reports p{
+    font-size: 15px;
+    margin-left: 455px;
+}
+.customers_Reports #display_all_customers{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 150px;
+    position: absolute;
+    margin-left: 290px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.search_form_customer input[type='text']{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 20px;
+    margin-left: 450px;
+    margin-top: 30px;
+}
+.search_form_customer label{
+    color: #5244ae;
+    position: absolute;
+    margin-left: 450px;
+}
+.search_form_customer #customer_search_button{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 75px;
+    cursor: pointer;
+}
+.search_customer_Results{
+    color: black;
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
+.search_customer_Results th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+}
+.search_customer_Results th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.customersReport {
+    margin-left: 320px;
+    margin-bottom: 20px;
+
+}
+.customersReport th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+}
+.customersReport th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+}
+#search_customer_Results p{
+   color: red;
+   margin-left: 220px;
+   
+}
+/* Goods Reports */
+.goods_Reports {
+    border: 1PX solid rgb(226, 215, 215);
+    border-radius: 5PX;
+    margin-left: 170px;
+    margin-top: -250px;
+    width: 78%;
+    position: absolute;
+    color: #5244ae;
+    display: none;
+}
+.goods_Reports h2{
+    font-size: 15px;
+    margin-left: 450px;
+}
+.goods_Reports p{
+    font-size: 15px;
+    margin-left: 455px;
+}
+.goods_Reports #display_all_goods{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 150px;
+    position: absolute;
+    margin-left: 290px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.goods_Reports select{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 20px;
+    margin-left: 450px;
+    margin-top: 30px;
+}
+.goods_Reports button {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 4px;
+    width: 75px;
+    cursor: pointer;
+ }
+.search_goods_Results{
+    color: black;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.goodsReports{
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.goodsReports th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+}
+.search_goods_Results th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 200;
+}
+.search_goods_Results tbody tr, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+    font-size: 12px;
+}
+.goodsReportsTable p{
+   color: red;
+   margin-left: 220px;
+}
+/* Schedule Transport */
+.scheduledTransport {
+    border: 1PX solid rgb(226, 215, 215);
+    border-radius: 5PX;
+    margin-left: 210px;
+    margin-top: -250px;
+    width: 80%;
+    position: absolute;
+    color: #5244ae;
+    display: none;
+}
+.scheduledTransport h2{
+    font-size: 15px;
+    margin-left: 450px;
+}
+.assignedTodriverBookings{
+    margin-left: 5px;
+    margin-bottom: 10px;
+} 
+.assignedTodriverBookings th, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+}
+.assignedTodriverBookings tbody tr, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+    font-size: 12px;
+}
+/* Complete Transport */
+.CompleteTransport {
+    border: 1PX solid rgb(226, 215, 215);
+    border-radius: 5PX;
+    margin-left: 210px;
+    margin-top: -250px;
+    width: 80%;
+    position: absolute;
+    color: #5244ae;
+    display: none;
+}
+.CompleteTransport h2{
+    font-size: 15px;
+    margin-left: 450px;
+}
+.transportCompleted{
+    margin-left: 5px;
+    margin-bottom: 10px;
+} 
+.transportCompleted tr, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+}
+.transportCompleted tbody tr, td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-weight: 200;
+    background-color: hwb(210 92% 4%);
+    font-size: 12px;
+}

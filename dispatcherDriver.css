@@ -1,0 +1,533 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.welcome_user_message{
+    background-color: red;
+    position: absolute;
+}
+#Dispatcher{
+    background-color: white;
+}
+
+ h2 {
+    font-size: 17px;
+    color: white;
+    float: right;
+    margin-right: 60px;
+}
+/* end of style for links */
+.Dispatcher_section{
+    background-color: white;
+    width: 95%;
+    margin-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: auto;
+}
+.Dispatcher_section .user-control{
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #3300ff;
+    border: 1px solid #3300ff;
+    border-radius: 5px;
+}
+.Dispatcher_section .user-control a{
+    color: white;
+    /* color: rgb(10, 22, 183); */
+    font-size: 17px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 3px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.Dispatcher_section .dispatcher_section{
+    background-color: #f1e9e9;
+    width: 93%;
+    margin-left: 45px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border: 1px solid rgb(245, 236, 236);
+    border-radius: 5px;
+    height: auto;
+    /* display: none; */
+}
+
+.Dispatcher_section .dispatcher_section p{
+    margin-left: 20px;
+    font-size: 20px;
+   
+    
+}
+.Dispatcher_section .new_bookings_page{
+    margin: 11px;
+    
+}
+.Dispatcher_section .new_bookings_page p{
+   color: black;
+   margin: 10px;
+   
+}
+/* styling the displayed data */
+.new_bookings_page hr{
+    margin-top: 30px;
+}
+.dataIndex{
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.dataIndex h1{
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.Dispatcher_section .new_bookings_page .dataIndex  p{
+    font-size: 14px;
+}
+.goods_Data{
+   position: absolute;
+   margin-left: 250px;
+   margin-top: -145px;
+}
+.vehicle_Data{
+    position: absolute;
+    margin-left: 450px;
+    margin-top: -145px;
+ }
+/* button */
+.dataIndex #assingButton {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 5px 11px;
+    cursor: pointer;
+}
+.dataIndex #assingButton :hover{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* style for goods information */
+.new_bookings_page .dataGoods{
+    margin-left: 50px;
+    position: absolute;
+    left: 32%;
+    margin-top: -170px;
+   
+}
+.new_bookings_page .dataGoods p{
+    font-size: 14px;
+   
+}
+/* style for vehicle information */
+.new_bookings_page .dataVehicle{
+    margin-left: 50px;
+    position: absolute;
+    left: 60%;
+    margin-top: -170px;
+   
+}
+.new_bookings_page .dataVehicle p{
+    font-size: 14px;
+   
+}
+#customerID {
+    display: none;
+}
+
+/* style for assign driver to the transport */
+.assigningDriverPage{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    top: 18%;
+    left: 30%;
+    position: fixed;
+    border: 1px solid white;
+    border-radius: 5px;
+    /* color: crimson; */
+    color: black;
+}
+.assigningDriverPage h1{
+    text-align: center;
+    font-size: 20px;
+}
+.assigningDriverPage h2{
+    margin-left: 10px;
+    font-size: 15px;
+}
+/* information */
+.infor{
+    display: flex;
+}
+.inforData1{
+    margin-left: 40px;
+}
+.inforData2{
+    margin-left: 120px;
+}
+.infor p{
+    font-size: 13px;
+}
+
+/* choosing a driver button */
+#choseAdriver{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    border: 1px solid green;
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    left: 38%;
+    top: 80%;
+    cursor: pointer;
+}
+.assigDriverList {
+    /* color: crimson; */
+    color: black;
+    background-color: white;
+    height: auto;
+    width: 650px;
+    z-index: 1000;
+    margin-left: 390px;
+    position: absolute;
+    top: 20%;
+    display: none;
+    position: fixed;
+}
+.assigDriverList h1{
+    font-size: 16px;
+    text-align: center;
+}
+/* driver available list */
+#driversAvaillable{
+    margin-left: 25px;
+}
+#driversAvaillable tr th{
+    font-size: 11px;
+}
+#driversAvaillable tr td{
+    font-size: 11px;
+    padding: 13px;
+}
+/* style for select to choose */
+#select_to_choose{
+    background-color: green;
+    color: white;
+    border-radius: 1px solid green;
+    border: 5px;
+    cursor: pointer;
+}
+/* page to show assigned driver transaction style */
+.assignedDriverTransaction {
+    width: 90%;
+    height: 400px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    display: none;
+}
+.assignedDriverTransaction h1{
+    text-align: center;
+    font-size: 17px;
+    color: green;
+}
+.assignedTodriverBookings {
+    margin-left: 100px;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.assignedTodriverBookings thead th{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+.assignedTodriverBookings tbody tr{
+    border-bottom: 1px solid #ddd;
+    /* margin-left: 20px; */
+}
+.assignedTodriverBookings tbody tr td{
+    font-size: 12px;
+    padding: 5px 10px;
+}
+#stauspedding{
+    color: rgb(191, 191, 59);
+    background-color: hsl(46, 23%, 89%);
+}
+
+/* driver page styling */
+.driverDIV{
+    background-color: white;
+    height: 500px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.welcomedriverID{
+    position: absolute;
+    left: 90%;
+    color: #615928;
+    font: 12px;
+}
+#driverID{
+    display: none;
+}
+.driverAssignedJobs{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: auto;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+.driverAssignedJobs h1{
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+}
+.driver_access_links{
+    display: flex;
+    flex-direction: row;
+}
+.driverAssignedJobs ul a{
+   color: white;
+   font-size: 18px;
+   text-decoration: none;
+   background-color: green;
+   padding: 8px;
+   border: 1px solid green;
+   border-radius: 4px;
+   cursor: pointer;
+   
+}
+/* driver logg out */
+#driverLogout{
+   /* margin-left: 600px; */
+   background-color: grey;
+   background-color: grey;
+   padding: 10px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.jobsSection{
+    display: none;
+    border: 1px solid rgb(242, 233, 233);
+    border-radius: 5px;
+}
+.jobsSection h1{
+    font-size: 15px;
+    color: green;
+    text-align: center;
+    text-decoration: underline;
+   
+}
+#JobsTable {
+    margin-left: 20px;
+}
+.jobsSection thead th{
+   
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+.jobsSection tbody tr td{
+    font-size: 12px;
+    padding: 5px 10px;
+}
+/* button to complete transaction */
+#jodsCompleteButton {
+    color: white;
+    background-color: green;
+    border:none;
+    padding: 4px;
+    cursor: pointer;
+   
+}
+
+/* Completed Transporst Styling */
+.completedTransport{
+    position: absolute;
+    width: 89%;
+    height: 640px;
+    position: fixed;
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(222, 219, 219);
+    border-radius: 10px;
+    left: 5%;
+    top: 12%;
+    display: none;
+}
+.completedTransport h1{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+
+.completedTransporst {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.completedTransporst thead th{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+.completedTransporst tbody tr{
+    border-bottom: 1px solid #ddd;
+    /* margin-left: 20px; */
+}
+.completedTransporst tbody tr td{
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+
+
+/* To Complete Transaction Page */
+
+.complete_Transaction_page{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* add a blur effect */
+    backdrop-filter: blur(0px);
+    /* semi-transparent background */
+    background-color: rgba(32, 30, 30, 0.5);
+    /* to ensure it is on top of other content */
+    z-index: 9999;
+}
+.complete_Transaction{
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    width: 330px;
+    height: 450px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+.complete_Transaction p{
+    color: green;
+    text-decoration: underline;
+}
+/*  complete_transaction_form style */
+.complete_transaction_form {
+    margin-left: 60px;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    
+}
+select {
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    margin-bottom: 15px;
+}
+input {
+    padding: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+#complete_Transaction_button{
+    width: 30%;
+    padding: 4px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+#complete_Transaction_message_container {
+    display: none;
+    background-color: lightblue;
+    margin-left: -40px;
+    height: 30px;
+    margin-top: 5px;
+    /* margin-top: -415px; */
+}
+#complete_Transaction_message_text{
+    margin-top: -1px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: green;
+}
+
+/* Driver Completed Jobs */
+.completedDriverJobs{
+    width: 95%;
+    height: auto;
+    position: absolute;
+    border: 1px solid hsla(0, 16%, 91%, 0.925);
+    border-radius: 10px;
+    position: fixed;
+    display: none;
+    margin-left: 15px;
+}
+/* driver complete jobs */
+.driverCompleteJobs {
+    margin: 20px;
+    width: 90%;
+}
+.driverCompleteJobs thead th{
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+.driverCompleteJobs tbody tr{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    /* margin-left: 20px; */
+}
+.driverCompleteJobs tbody tr td{
+    font-size: 12px;
+    padding: 5px 10px;
+}
